@@ -1,0 +1,11 @@
+{
+  "name": "alvoun-website",
+  "version": "1.0.0",
+  "description": "Alvoun Website",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

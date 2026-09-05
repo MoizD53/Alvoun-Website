@@ -1,0 +1,123 @@
+/* RESET & BASE */
+:root {
+    --bg-main: #05080A;
+    --bg-sec: #071116;
+    --bg-tert: #0A151B;
+    --bg-quad: #0D1A20;
+    
+    --text-primary: #F5F7F6;
+    --text-secondary: #D9E0DF;
+    --text-tertiary: #899497;
+    
+    --alvoun-navy: #0f2b5b;
+    --alvoun-green: #a3b836;
+    --alvoun-cyan: #4a90e2; /* Subtle accent */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none; /* Custom cursor */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+/* TYPOGRAPHY */
+.editorial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.editorial-text.large {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    color: var(--text-primary);
+    font-style: normal;
+}
+
+.editorial-text.body-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-tertiary);
+    font-style: normal;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.small-title {
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-secondary);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: var(--text-tertiary);
+}
+
+.arabic-title {
+    font-size: 3rem;
+    margin: 1rem 0;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+/* UTILITIES */
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mt-4 { margin-top: 4rem; }
+.mb-4 { margin-bottom: 4rem; }
+.pt-2 { padding-top: 2rem; }
+
+.text-center { text-align: center; }
+.max-w-800 { max-width: 800px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.bg-sec { background-color: var(--bg-sec); }
+.bg-tert { background-color: var(--bg-tert); }
+.bg-quad { background-color: var(--bg-quad); }
+"@
+$content = Get-Content style.css
+$newContent = $newCSS + "`n" + ($content[123..($content.Length - 1)] -join "`n")
+Set-Content style.css $newContent
+","Cwd":"d:\\Alvoun-Website","IsDaemon":false,"WaitMsBeforeAsync":5000,"toolAction":"Rewrite base CSS completely","toolSummary":"Rewrite base CSS"}}]}

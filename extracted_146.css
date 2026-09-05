@@ -1,0 +1,81 @@
+/* RESET & BASE */\r
+ :root {\r
+-    --bg-light: #fdfdfc;\r
+-    --bg-dark: #0f1113;\r
+-    --text-dark: #1a1a1a;\r
+-    --text-light: #e0e0e0;\r
+-    --accent: #235789;\r
+-    --spacing-unit: 1rem;\r
++    --bg-main: #05080A;\r
++    --bg-sec: #071116;\r
++    --bg-tert: #0A151B;\r
++    --bg-quad: #0D1A20;\r
++    \r
++    --text-primary: #F5F7F6;\r
++    --text-secondary: #D9E0DF;\r
++    --text-tertiary: #899497;\r
++    \r
++    --alvoun-navy: #0f2b5b;\r
++    --alvoun-green: #a3b836;\r
++    --alvoun-cyan: #4a90e2; /* Subtle accent */\r
+ }\r
+ \r
+ * {\r
+@@ -12,10 +12,11 @@
+     padding: 0;\r
+     box-sizing: border-box;\r
++    cursor: none; /* Custom cursor */\r
+ }\r
+ \r
+ body {\r
+-    background-color: var(--bg-light);\r
+-    color: var(--text-dark);\r
++    background-color: var(--bg-main);\r
++    color: var(--text-primary);\r
+     font-family: 'Inter', sans-serif;\r
+     font-weight: 300;\r
+     line-height: 1.6;\r
+@@ -24,6 +24,7 @@
+ h1, h2, h3, h4, h5, h6 {\r
+     font-family: 'Cormorant Garamond', serif;\r
+     font-weight: 300;\r
++    color: var(--text-primary);\r
+ }\r
+ \r
+ a {\r
+@@ -30,15 +30,12 @@
+     text-decoration: none;\r
+-    transition: opacity 0.3s ease;\r
+-}\r
+-\r
+-a:hover {\r
+-    opacity: 0.7;\r
++    transition: color 0.3s ease;\r
++    cursor: none;\r
+ }\r
+ \r
+ .container {\r
+-    max-width: 1200px;\r
+-    margin: 0 auto;\r
+-    padding: 0 2rem;\r
++    max-width: 1400px;\r
++    margin: 0 auto;\r
++    padding: 0 4rem;\r
+ }\r
+ \r
+ /* TYPOGRAPHY */\r
+@@ -45,7 +45,7 @@
+     font-family: 'Cormorant Garamond', serif;\r
+     font-size: 1.5rem;\r
+-    line-height: 1.6;\r
+-    color: #444;\r
++    color: var(--text-secondary);\r
++    font-style: italic;\r
+ }\r
+ \r
+ .editorial-text.large {\r
+[diff_block_end]
+
+Please note that the above snippet only shows the MODIFIED lines from the last change. It shows up to 3 lines of unchanged lines before and after the modified lines. The actual file contents may have many more lines not shown.
+
+We did our best to apply changes despite some inaccuracies. Double check if the edit applied is what you intended."}

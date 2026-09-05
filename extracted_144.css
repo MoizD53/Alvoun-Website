@@ -1,0 +1,52 @@
+/* RESET & BASE */\r
+:root {\r
+    --bg-light: #fdfdfc;\r
+    --bg-dark: #0f1113;\r
+    --text-dark: #1a1a1a;\r
+    --text-light: #e0e0e0;\r
+    --accent: #235789;\r
+    --spacing-unit: 1rem;\r
+}\r
+\r
+* {\r
+    margin: 0;\r
+    padding: 0;\r
+    box-sizing: border-box;\r
+}\r
+\r
+body {\r
+    background-color: var(--bg-light);\r
+    color: var(--text-dark);\r
+    font-family: 'Inter', sans-serif;\r
+    font-weight: 300;\r
+    line-height: 1.6;\r
+    overflow-x: hidden;\r
+}\r
+\r
+h1, h2, h3, h4, h5, h6 {\r
+    font-family: 'Cormorant Garamond', serif;\r
+    font-weight: 300;\r
+}\r
+\r
+a {\r
+    color: inherit;\r
+    text-decoration: none;\r
+    transition: opacity 0.3s ease;\r
+}\r
+\r
+a:hover {\r
+    opacity: 0.7;\r
+}\r
+\r
+.container {\r
+    max-width: 1200px;\r
+    margin: 0 auto;\r
+    padding: 0 2rem;\r
+}\r
+\r
+/* TYPOGRAPHY */\r
+.editorial-text {\r
+    font-family: 'Cormorant Garamond', serif;\r
+    font-size: 1.5rem;\r
+
+"}

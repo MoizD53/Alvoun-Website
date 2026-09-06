@@ -18,7 +18,7 @@
             <a href="#introduction">Our Story</a>
             <a href="#origin">Origin</a>
             <a href="#water">The Water</a>
-            <a href="#collection">The Collection</a>
+            <a href="#cinematic-collection">The Collection</a>
             <a href="#philosophy">The Philosophy</a>
             <a href="#footer">Contact</a>
         </div>
@@ -33,7 +33,7 @@
             <a href="#introduction" class="mobile-nav-link">Our Story</a>
             <a href="#origin" class="mobile-nav-link">Origin</a>
             <a href="#water" class="mobile-nav-link">The Water</a>
-            <a href="#collection" class="mobile-nav-link">The Collection</a>
+            <a href="#cinematic-collection" class="mobile-nav-link">The Collection</a>
             <a href="#philosophy" class="mobile-nav-link">The Philosophy</a>
             <a href="#footer" class="mobile-nav-link">Contact</a>
         </div>
@@ -82,24 +82,19 @@
 
         <!-- 03 BEFORE ALVOUN (Naphareese Maschroubat) -->
         <section id="origin" class="section origin-section reveal">
-            <div class="container split-layout align-center">
-                <div class="split-text">
-                    <h2 class="section-title small-title">BEFORE ALVOUN</h2>
-                    <h3 class="arabic-title">نفح ریز مشروبات</h3>
-                    <h3 class="section-subtitle">Naphareese Maschroubat</h3>
-                    
-                    <p class="editorial-text body-text mt-2">
-                        Naphareese Maschroubat (نفح ریز مشروبات, meaning 'fragrance-releasing beverages') is a name that suggests more than a drink. It alludes to breath, essence, and the quiet unfolding of purity into the everyday. From its earliest vision, the purpose was never display but distillation. What emerged was not a collection of products but a line of offerings shaped by restraint, each one carrying the trace of something considered, something quiet.
-                    </p>
-                    <p class="editorial-text body-text mt-1">
-                        Alvoun followed as an extension of that same current. Devoted to mineral and alkaline water, it did not break away but flowed forward, drawing from the same still source. Its clarity is not just a feature but a principle. What it offers is not novelty but balance, not noise but depth, shaped by patience and guided by the same hand that defined its origin.
-                    </p>
-                    <div class="flow-arrow mt-2">↓</div>
-                    <h3 class="section-subtitle mt-2">ALVOUN</h3>
-                </div>
-                <div class="split-image image-parallax">
-                    <img src="666.png" alt="Alvoun Logo" class="brand-logo-img">
-                </div>
+            <div class="container text-center">
+                <h2 class="section-title small-title">BEFORE ALVOUN</h2>
+                <h3 class="arabic-title">نفح ریز مشروبات</h3>
+                <h3 class="section-subtitle">Naphareese Maschroubat</h3>
+                
+                <p class="editorial-text body-text max-w-800 mx-auto mt-2">
+                    Naphareese Maschroubat (نفح ریز مشروبات, meaning 'fragrance-releasing beverages') is a name that suggests more than a drink. It alludes to breath, essence, and the quiet unfolding of purity into the everyday. From its earliest vision, the purpose was never display but distillation. What emerged was not a collection of products but a line of offerings shaped by restraint, each one carrying the trace of something considered, something quiet.
+                </p>
+                <p class="editorial-text body-text max-w-800 mx-auto mt-1">
+                    Alvoun followed as an extension of that same current. Devoted to mineral and alkaline water, it did not break away but flowed forward, drawing from the same still source. Its clarity is not just a feature but a principle. What it offers is not novelty but balance, not noise but depth, shaped by patience and guided by the same hand that defined its origin.
+                </p>
+                <div class="flow-arrow mt-2">↓</div>
+                <h3 class="section-subtitle mt-2">ALVOUN</h3>
             </div>
         </section>
 
@@ -273,50 +268,82 @@
         </section>
 
         <!-- 12 THE COLLECTION -->
-        <section id="collection" class="section collection-section reveal">
-            <div class="container">
-                <h2 class="section-title text-center mb-4">THE COLLECTION</h2>
-                
-                <div class="products-grid">
-                    <!-- Product 1 -->
-                    <div class="product-card reveal-up">
-                        <div class="product-image">
-                            <img src="300 ml Water Bottle_1.jpg" alt="Alvoun 300ml">
-                        </div>
-                        <div class="product-details">
-                            <div contenteditable="true" class="prod-name">ALVOUN MINERALE</div>
-                            <div contenteditable="true" class="prod-vol">300 ML</div>
-                            <div contenteditable="true" class="prod-type">MINERAL WATER</div>
-                            <div contenteditable="true" class="prod-pack">PET BOTTLE</div>
-                        </div>
+        <!-- 12 THE COLLECTION (CINEMATIC) -->
+        <section id="cinematic-collection" class="cine-collection-wrapper">
+            <div class="cine-pinned-container">
+                <!-- Atmospheric Background Elements -->
+                <div class="cine-bg">
+                    <div class="cine-glow"></div>
+                    <div class="cine-particles"></div>
+                </div>
+
+                <!-- Desktop Progress Indicator -->
+                <div class="cine-indicator">
+                    <div class="cine-dot" id="dot-1"><span class="cine-num">01</span></div>
+                    <div class="cine-dot" id="dot-2"><span class="cine-num">02</span></div>
+                    <div class="cine-dot" id="dot-3"><span class="cine-num">03</span></div>
+                    <div class="cine-dot" id="dot-4"><span class="cine-num">04</span></div>
+                </div>
+
+                <!-- Product Stage (Bottles) -->
+                <div class="cine-bottle-stage">
+                    <img src="bottle-300ml.png" alt="Alvoun 300ML" class="cine-bottle-img" id="bottle-1">
+                    <img src="bottle-500ml.png" alt="Alvoun 500ML" class="cine-bottle-img" id="bottle-2">
+                    <img src="bottle-1l.png" alt="Alvoun 1L" class="cine-bottle-img" id="bottle-3">
+                    <img src="bottle-alkaline.png" alt="Alvoun Alkaline" class="cine-bottle-img" id="bottle-4">
+                </div>
+
+                <!-- Text Stage (Editorial Details) -->
+                <div class="cine-text-stage">
+                    <!-- Opening Text (Optional, or start directly with 01) -->
+                    <div class="cine-text-block" id="cine-intro">
+                        <div class="cine-subtitle">THE COLLECTION</div>
+                        <h2 class="cine-title">PURENESS IN EVERY SIZE.</h2>
+                        <p class="cine-desc">Same source.<br>Same integrity.<br>Different needs.</p>
                     </div>
 
-                    <!-- Product 2 -->
-                    <div class="product-card reveal-up delay-1">
-                        <div class="product-image">
-                            <img src="500ml.jpg" alt="Alvoun 500ml">
-                        </div>
-                        <div class="product-details">
-                            <div contenteditable="true" class="prod-name">ALVOUN MINERALE</div>
-                            <div contenteditable="true" class="prod-vol">500 ML</div>
-                            <div contenteditable="true" class="prod-type">MINERAL WATER</div>
-                            <div contenteditable="true" class="prod-pack">PET BOTTLE</div>
-                        </div>
+                    <div class="cine-text-block" id="cine-text-1">
+                        <div class="cine-num-title">01 <br> 300ML</div>
+                        <h3 class="cine-heading">PURE COMPANION.</h3>
+                        <p class="cine-desc">Compact, considered, and designed for everyday moments.</p>
+                        <div class="cine-divider"></div>
                     </div>
 
-                    <!-- Product 3 -->
-                    <div class="product-card reveal-up delay-2">
-                        <div class="product-image">
-                            <img src="Alkline Water 1 Ltr_Alvoun.jpg" alt="Alvoun 1L Alkaline">
-                        </div>
-                        <div class="product-details">
-                            <div contenteditable="true" class="prod-name">ALVOUN ALKALINE</div>
-                            <div contenteditable="true" class="prod-vol">1000 ML</div>
-                            <div contenteditable="true" class="prod-type">ALKALINE WATER (pH 9.5)</div>
-                            <div contenteditable="true" class="prod-pack">PREMIUM PET BOTTLE</div>
-                        </div>
+                    <div class="cine-text-block" id="cine-text-2">
+                        <div class="cine-num-title">02 <br> 500ML</div>
+                        <h3 class="cine-heading">MORE FOR MORE.</h3>
+                        <p class="cine-desc">The balanced everyday size, shaped by restraint and clarity.</p>
+                        <div class="cine-divider"></div>
+                    </div>
+
+                    <div class="cine-text-block" id="cine-text-3">
+                        <div class="cine-num-title">03 <br> 1L</div>
+                        <h3 class="cine-heading">ROOM TO GO FURTHER.</h3>
+                        <p class="cine-desc">A larger format for longer days, shared moments and greater hydration needs.</p>
+                        <div class="cine-divider"></div>
+                    </div>
+
+                    <div class="cine-text-block" id="cine-text-4">
+                        <div class="cine-num-title">04 <br> ALKALINE</div>
+                        <h3 class="cine-heading">BALANCE, REFINED.</h3>
+                        <p class="cine-desc">Enhanced with essential minerals. A deeper spectrum of hydration.</p>
+                        <div class="cine-divider"></div>
+                    </div>
+
+                    <!-- Final Statement -->
+                    <div class="cine-text-block" id="cine-outro">
+                        <div class="cine-subtitle">THE COLLECTION</div>
+                        <h2 class="cine-heading">Four formats.<br>One standard of purity.</h2>
+                        <ul class="cine-format-list">
+                            <li>300ML</li>
+                            <li>500ML</li>
+                            <li>1L</li>
+                            <li>ALKALINE</li>
+                        </ul>
                     </div>
                 </div>
+                
+                <div class="cine-scroll-hint">Scroll to explore</div>
             </div>
         </section>
 
@@ -442,7 +469,7 @@
                         <li><a href="#introduction">Our Story</a></li>
                         <li><a href="#origin">Origin</a></li>
                         <li><a href="#water">The Water</a></li>
-                        <li><a href="#collection">The Collection</a></li>
+                        <li><a href="#cinematic-collection">The Collection</a></li>
                         <li><a href="#philosophy">The Philosophy</a></li>
                         <li><a href="#footer">Contact</a></li>
                     </ul>

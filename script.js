@@ -157,3 +157,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// CINEMATIC COLLECTION (GSAP ScrollTrigger)
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const cineWrapper = document.querySelector('.cine-collection-wrapper');
+    if (cineWrapper) {
+        const tlCine = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.cine-collection-wrapper',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1,
+                pin: '.cine-pinned-container'
+            }
+        });
+
+        // Initial setup
+        gsap.set(['#cine-intro', '#cine-text-1', '#cine-text-2', '#cine-text-3', '#cine-text-4', '#cine-outro'], { opacity: 0 });
+        
+        // 0-10%: Intro fades in
+        tlCine.to('#cine-intro', { opacity: 1, duration: 1 })
+              .to('#cine-intro', { opacity: 0, duration: 1, delay: 0.5 });
+              
+        // 300ML
+        tlCine.to('#bottle-1', { opacity: 1, scale: 1, z: 0, rotationY: 10, duration: 2 }, 'b1')
+              .to('#cine-text-1', { opacity: 1, duration: 1 }, 'b1+=0.5')
+              .to('#dot-1', { backgroundColor: '#fff', scale: 1.5, duration: 0.5 }, 'b1')
+              .to('.cine-particles', { y: '-10%', duration: 2 }, 'b1')
+              // Out
+              .to('#bottle-1', { opacity: 0, scale: 1.2, z: 100, rotationY: 20, duration: 2 }, 'b1_out')
+              .to('#cine-text-1', { opacity: 0, duration: 1 }, 'b1_out')
+              .to('#dot-1', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b1_out');
+
+        // 500ML
+        tlCine.to('#bottle-2', { opacity: 1, scale: 1, z: 0, rotationY: -10, duration: 2 }, 'b2')
+              .to('#cine-text-2', { opacity: 1, duration: 1 }, 'b2+=0.5')
+              .to('#dot-2', { backgroundColor: '#fff', scale: 1.5, duration: 0.5 }, 'b2')
+              .to('.cine-particles', { y: '-20%', duration: 2 }, 'b2')
+              // Out
+              .to('#bottle-2', { opacity: 0, scale: 1.2, z: 100, rotationY: -20, duration: 2 }, 'b2_out')
+              .to('#cine-text-2', { opacity: 0, duration: 1 }, 'b2_out')
+              .to('#dot-2', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b2_out');
+
+        // 1L
+        tlCine.to('#bottle-3', { opacity: 1, scale: 1, z: 0, rotationY: 5, duration: 2 }, 'b3')
+              .to('#cine-text-3', { opacity: 1, duration: 1 }, 'b3+=0.5')
+              .to('#dot-3', { backgroundColor: '#fff', scale: 1.5, duration: 0.5 }, 'b3')
+              .to('.cine-particles', { y: '-30%', duration: 2 }, 'b3')
+              // Out
+              .to('#bottle-3', { opacity: 0, scale: 1.2, z: 100, rotationY: 10, duration: 2 }, 'b3_out')
+              .to('#cine-text-3', { opacity: 0, duration: 1 }, 'b3_out')
+              .to('#dot-3', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b3_out');
+
+        // ALKALINE
+        tlCine.to('#bottle-4', { opacity: 1, scale: 1, z: 0, rotationY: 0, duration: 2 }, 'b4')
+              .to('#cine-text-4', { opacity: 1, duration: 1 }, 'b4+=0.5')
+              .to('#dot-4', { backgroundColor: '#fff', scale: 1.5, duration: 0.5 }, 'b4')
+              .to('.cine-glow', { backgroundColor: 'rgba(51, 153, 255, 0.2)', scale: 1.2, duration: 2 }, 'b4')
+              .to('.cine-particles', { y: '-40%', duration: 2 }, 'b4')
+              // Out
+              .to('#bottle-4', { opacity: 0, scale: 1.2, duration: 2 }, 'b4_out')
+              .to('#cine-text-4', { opacity: 0, duration: 1 }, 'b4_out')
+              .to('#dot-4', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b4_out');
+              
+        // Outro
+        tlCine.to('#cine-outro', { opacity: 1, duration: 2 });
+    }
+}
+

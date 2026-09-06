@@ -693,7 +693,7 @@ a:hover {
     pointer-events: none;
 }
 .cine-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.9rem; font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #888;
@@ -701,19 +701,19 @@ a:hover {
 }
 .cine-title, .cine-heading {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
+    font-size: 3.5rem; font-weight: 600;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: #fff;
 }
 .cine-desc {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: #bbb;
     line-height: 1.6;
     max-width: 400px;
 }
 .cine-num-title {
-    font-size: 0.8rem;
+    font-size: 1rem; font-weight: 600;
     letter-spacing: 0.1em;
     color: #888;
     margin-bottom: 1.5rem;
@@ -729,7 +729,7 @@ a:hover {
     margin-top: 2rem;
 }
 .cine-format-list li {
-    font-size: 0.9rem;
+    font-size: 1.1rem; font-weight: 500;
     letter-spacing: 0.1em;
     color: #aaa;
     margin-bottom: 0.5rem;
@@ -909,7 +909,7 @@ a:hover {
 
 .footer-section-title {
     font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.9rem; font-weight: 600;
     letter-spacing: 0.2em;
     color: #fff;
     margin-bottom: 1.5rem;
@@ -925,7 +925,7 @@ a:hover {
 }
 
 .footer-nav a {
-    font-size: 0.85rem;
+    font-size: 0.95rem; font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #aaa;
@@ -941,7 +941,7 @@ a:hover {
 }
 
 .contact-link a {
-    font-size: 0.95rem;
+    font-size: 1.1rem; font-weight: 500;
     color: #ccc;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -1233,5 +1233,6 @@ a:hover {
     text-align: center;
     z-index: 15;
 }
+
 
 

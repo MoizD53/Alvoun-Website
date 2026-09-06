@@ -362,6 +362,7 @@ a:hover {
 /* SCIENCE EQUATION */
 .equation {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
@@ -540,7 +541,7 @@ a:hover {
 .ph-marker.acidic { left: 0%; transform: translate(0, -50%); }
 .ph-marker.neutral { left: 50%; }
 .ph-marker.alvoun-ph { left: 68%; }
-.ph-marker.alkaline { left: 100%; transform: translate(-100%, -50%); }
+.ph-marker.alkaline { right: 0%; transform: translate(0%, -50%); left: auto; }
 
 .ph-marker.alvoun-ph::before {
     background: #3399ff;

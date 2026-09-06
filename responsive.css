@@ -4,9 +4,10 @@
 }
 
 html, body {
-    
     width: 100%;
+    max-width: 100vw;
     position: relative;
+    overflow-x: hidden;
 }
 
 /* Typography Fluid Scaling */
@@ -154,10 +155,11 @@ html, body {
 /* Global responsive image fix */
 img, video {
     max-width: 100%;
-    height: 100dvh;
+    height: auto;
 }
 .hero-video {
     height: 100% !important;
+    width: 100% !important;
 }
 
 @media (max-width: 900px) {
@@ -225,5 +227,17 @@ img, video {
         width: auto;
         margin: 0 auto;
         object-fit: contain;
+    }
+    .footer-brand h2 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+    .arabic-title {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    .stat-value {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    .huge-stats .stat-value {
+        font-size: clamp(2.5rem, 10vw, 4rem);
     }
 }

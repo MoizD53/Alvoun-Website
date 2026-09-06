@@ -223,7 +223,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
               .to('#dot-4', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b4_out');
               
         // Outro
-        tlCine.to('#cine-outro', { opacity: 1, duration: 2 });
+        tlCine.to('#bottles-all', { opacity: 1, scale: 1, duration: 2 }, 'outro').to('#cine-outro', { opacity: 1, y: 0, duration: 2 }, 'outro');
     }
 }
 

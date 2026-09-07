@@ -890,16 +890,9 @@ a:hover {
 }
 
 .footer-logo-img {
-    width: 24px;
+    max-width: 140px;
     height: auto;
     filter: brightness(0) invert(1);
-}
-
-.footer-brand-name-small {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #ffffff;
-    letter-spacing: -0.02em;
 }
 
 .footer-address {
@@ -911,6 +904,21 @@ a:hover {
 
 .footer-address p {
     margin: 0;
+}
+
+.footer-maps-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #e5e7eb;
+    text-decoration: none;
+    border-bottom: 1px solid #4b5563;
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+}
+
+.footer-maps-link:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
 }
 
 .footer-contact-row {

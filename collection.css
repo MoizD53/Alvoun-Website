@@ -1,0 +1,263 @@
+/* ==========================================================================
+   THE COLLECTION - PREMIUM PRODUCT STAGE
+   ========================================================================== */
+
+.collection-section {
+    position: relative;
+    background: #05080A;
+    background: linear-gradient(to bottom, #05080A, #071116);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.collection-pinned-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Subtle atmospheric texture (noise) */
+.collection-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.04"/%3E%3C/svg%3E');
+    pointer-events: none;
+    z-index: 1;
+}
+
+.collection-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    box-sizing: border-box;
+}
+
+/* Desktop Progress Indicator */
+.collection-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 10%;
+}
+
+.progress-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
+
+.progress-item.active {
+    opacity: 1;
+}
+
+.progress-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.progress-dot.active {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Center Product Stage */
+.collection-stage {
+    position: relative;
+    width: 40%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+}
+
+.collection-bottle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transform-origin: center center;
+    will-change: transform, opacity;
+    /* Optional: very subtle drop shadow for depth, no glow */
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4));
+}
+
+/* Right Text Area */
+.collection-text-area {
+    width: 35%;
+    position: relative;
+    height: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.col-text-block {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, opacity, filter;
+}
+
+.col-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.col-num-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+.col-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.col-title-large {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.col-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.col-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 300;
+    opacity: 0.7;
+    max-width: 90%;
+}
+
+.col-desc-small {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    margin-top: 20px;
+}
+
+/* Utilities */
+.desktop-only { display: flex; }
+.mobile-only { display: none; }
+
+/* Mobile Layout */
+.collection-progress-mobile {
+    position: absolute;
+    top: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+@media (max-width: 991px) {
+    .collection-content {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+
+    .collection-stage {
+        width: min(70vw, 350px);
+        height: 50vh;
+        margin-top: 2vh;
+    }
+
+    .collection-text-area {
+        width: 85%;
+        height: 220px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .col-text-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .col-desc {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .col-title {
+        font-size: 2.5rem;
+    }
+
+    .col-title-large {
+        font-size: 2.8rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .collection-stage {
+        height: 45vh;
+        width: min(75vw, 280px);
+    }
+    .col-title {
+        font-size: 2.2rem;
+    }
+    .col-title-large {
+        font-size: 2.4rem;
+    }
+    .collection-text-area {
+        height: 200px;
+    }
+}

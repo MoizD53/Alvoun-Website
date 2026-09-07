@@ -158,72 +158,146 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// CINEMATIC COLLECTION (GSAP ScrollTrigger)
+// PREMIUM COLLECTION (GSAP ScrollTrigger)
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
-    const cineWrapper = document.querySelector('.cine-collection-wrapper');
-    if (cineWrapper) {
-        const tlCine = gsap.timeline({
+    const collectionSection = document.querySelector('.collection-section');
+    if (collectionSection) {
+        // Timeline with pinning
+        const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: '.cine-collection-wrapper',
+                trigger: '.collection-section',
                 start: 'top top',
-                end: 'bottom bottom',
+                end: '+=400%', // 400% of viewport height creates a long scrolling experience
                 scrub: 1,
-                pin: '.cine-pinned-container'
+                pin: true,
+                anticipatePin: 1
             }
         });
 
-        // Initial setup
-        gsap.set(['#cine-intro', '#cine-text-1', '#cine-text-2', '#cine-text-3', '#cine-text-4', '#cine-outro'], { opacity: 0 });
+        // Initialize elements
+        const bottles = [
+            document.getElementById('col-bottle-1'),
+            document.getElementById('col-bottle-2'),
+            document.getElementById('col-bottle-3'),
+            document.getElementById('col-bottle-4')
+        ];
         
-        // 0-10%: Intro fades in
-        tlCine.to('#cine-intro', { opacity: 1, duration: 1 })
-              .to('#cine-intro', { opacity: 0, duration: 1, delay: 0.5 });
-              
-        // 300ML
-        tlCine.to('#bottle-1', { opacity: 1, scale: 1, z: 0, rotationY: 10, duration: 2 }, 'b1')
-              .to('#cine-text-1', { opacity: 1, duration: 1 }, 'b1+=0.5')
-              .to('#dot-1', { backgroundColor: '#fff', scale: 1.5, duration: 0.5 }, 'b1')
-              .to('.cine-particles', { y: '-10%', duration: 2 }, 'b1')
-              // Out
-              .to('#bottle-1', { opacity: 0, scale: 1.2, z: 100, rotationY: 20, duration: 2 }, 'b1_out')
-              .to('#cine-text-1', { opacity: 0, duration: 1 }, 'b1_out')
-              .to('#dot-1', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b1_out');
+        const texts = [
+            document.getElementById('col-text-1'),
+            document.getElementById('col-text-2'),
+            document.getElementById('col-text-3'),
+            document.getElementById('col-text-4')
+        ];
+        
+        const progItems = [
+            document.getElementById('prog-1'),
+            document.getElementById('prog-2'),
+            document.getElementById('prog-3'),
+            document.getElementById('prog-4')
+        ];
+        
+        const progDots = [
+            document.getElementById('pdot-1'),
+            document.getElementById('pdot-2'),
+            document.getElementById('pdot-3')
+        ];
+        
+        const mProgs = [
+            document.getElementById('mprog-1'),
+            document.getElementById('mprog-2'),
+            document.getElementById('mprog-3'),
+            document.getElementById('mprog-4')
+        ];
 
-        // 500ML
-        tlCine.to('#bottle-2', { opacity: 1, scale: 1, z: 0, rotationY: -10, duration: 2 }, 'b2')
-              .to('#cine-text-2', { opacity: 1, duration: 1 }, 'b2+=0.5')
-              .to('#dot-2', { backgroundColor: '#fff', scale: 1.5, duration: 0.5 }, 'b2')
-              .to('.cine-particles', { y: '-20%', duration: 2 }, 'b2')
-              // Out
-              .to('#bottle-2', { opacity: 0, scale: 1.2, z: 100, rotationY: -20, duration: 2 }, 'b2_out')
-              .to('#cine-text-2', { opacity: 0, duration: 1 }, 'b2_out')
-              .to('#dot-2', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b2_out');
+        const intro = document.getElementById('col-intro');
+        const outro = document.getElementById('col-outro');
 
-        // 1L
-        tlCine.to('#bottle-3', { opacity: 1, scale: 1, z: 0, rotationY: 5, duration: 2 }, 'b3')
-              .to('#cine-text-3', { opacity: 1, duration: 1 }, 'b3+=0.5')
-              .to('#dot-3', { backgroundColor: '#fff', scale: 1.5, duration: 0.5 }, 'b3')
-              .to('.cine-particles', { y: '-30%', duration: 2 }, 'b3')
-              // Out
-              .to('#bottle-3', { opacity: 0, scale: 1.2, z: 100, rotationY: 10, duration: 2 }, 'b3_out')
-              .to('#cine-text-3', { opacity: 0, duration: 1 }, 'b3_out')
-              .to('#dot-3', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b3_out');
+        // Set initial states
+        gsap.set(bottles, { opacity: 0, scale: 0.9, rotationY: -180 });
+        gsap.set(texts, { opacity: 0, y: 30, filter: 'blur(5px)' });
+        gsap.set(intro, { opacity: 1, y: 0, filter: 'blur(0px)' });
+        gsap.set(outro, { opacity: 0, y: 30, filter: 'blur(5px)' });
 
-        // ALKALINE
-        tlCine.to('#bottle-4', { opacity: 1, scale: 1, z: 0, rotationY: 0, duration: 2 }, 'b4')
-              .to('#cine-text-4', { opacity: 1, duration: 1 }, 'b4+=0.5')
-              .to('#dot-4', { backgroundColor: '#fff', scale: 1.5, duration: 0.5 }, 'b4')
-              .to('.cine-glow', { backgroundColor: 'rgba(51, 153, 255, 0.2)', scale: 1.2, duration: 2 }, 'b4')
-              .to('.cine-particles', { y: '-40%', duration: 2 }, 'b4')
-              // Out
-              .to('#bottle-4', { opacity: 0, scale: 1.2, duration: 2 }, 'b4_out')
-              .to('#cine-text-4', { opacity: 0, duration: 1 }, 'b4_out')
-              .to('#dot-4', { backgroundColor: 'rgba(255,255,255,0.2)', scale: 1, duration: 0.5 }, 'b4_out');
-              
-        // Outro
-        tlCine.to('#bottles-all', { opacity: 1, scale: 1, duration: 2 }, 'outro').to('#cine-outro', { opacity: 1, y: 0, duration: 2 }, 'outro');
+        // 0-10% Intro fades out, Bottle 1 fades in
+        tl.to(intro, { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "intro_out")
+          .set(bottles[0], { rotationY: -90, scale: 0.85, opacity: 0 }, "intro_out")
+          .to(bottles[0], { opacity: 1, scale: 1, rotationY: 0, duration: 1.5, ease: "power2.out" }, "intro_out+=0.5")
+          .to(texts[0], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "intro_out+=1");
+          
+        if(progItems[0]) tl.to(progItems[0], { opacity: 1, duration: 0.5 }, "intro_out+=1");
+        if(progDots[0]) tl.to(progDots[0], { backgroundColor: '#fff', duration: 0.5 }, "intro_out+=1");
+
+        // Keep Bottle 1 for a bit
+        tl.to({}, { duration: 1 });
+
+        // Transition 1: 300ML -> 500ML
+        tl.to(texts[0], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans1")
+          // Outgoing bottle
+          .to(bottles[0], { rotationY: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans1")
+          .to(bottles[0], { opacity: 0, duration: 0.4 }, "trans1+=0.6")
+          // Incoming bottle
+          .set(bottles[1], { rotationY: -180, scale: 0.85, opacity: 0 }, "trans1")
+          .to(bottles[1], { rotationY: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans1")
+          .to(bottles[1], { opacity: 1, duration: 0.4 }, "trans1+=1")
+          
+          .to(texts[1], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans1+=1.5");
+          
+        if(progItems[0]) tl.to(progItems[0], { opacity: 0.3, duration: 0.5 }, "trans1");
+        if(progDots[0]) tl.to(progDots[0], { backgroundColor: 'transparent', duration: 0.5 }, "trans1");
+        if(progItems[1]) tl.to(progItems[1], { opacity: 1, duration: 0.5 }, "trans1+=1.5");
+        if(progDots[1]) tl.to(progDots[1], { backgroundColor: '#fff', duration: 0.5 }, "trans1+=1.5");
+        if(mProgs[0]) tl.to(mProgs[0], { opacity: 0, duration: 0.5 }, "trans1");
+        if(mProgs[1]) tl.to(mProgs[1], { opacity: 1, duration: 0.5 }, "trans1+=1.5");
+
+        // Keep Bottle 2 for a bit
+        tl.to({}, { duration: 1 });
+
+        // Transition 2: 500ML -> 1L
+        tl.to(texts[1], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans2")
+          .to(bottles[1], { rotationY: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans2")
+          .to(bottles[1], { opacity: 0, duration: 0.4 }, "trans2+=0.6")
+          .set(bottles[2], { rotationY: -180, scale: 0.85, opacity: 0 }, "trans2")
+          .to(bottles[2], { rotationY: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans2")
+          .to(bottles[2], { opacity: 1, duration: 0.4 }, "trans2+=1")
+          .to(texts[2], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans2+=1.5");
+          
+        if(progItems[1]) tl.to(progItems[1], { opacity: 0.3, duration: 0.5 }, "trans2");
+        if(progDots[1]) tl.to(progDots[1], { backgroundColor: 'transparent', duration: 0.5 }, "trans2");
+        if(progItems[2]) tl.to(progItems[2], { opacity: 1, duration: 0.5 }, "trans2+=1.5");
+        if(progDots[2]) tl.to(progDots[2], { backgroundColor: '#fff', duration: 0.5 }, "trans2+=1.5");
+        if(mProgs[1]) tl.to(mProgs[1], { opacity: 0, duration: 0.5 }, "trans2");
+        if(mProgs[2]) tl.to(mProgs[2], { opacity: 1, duration: 0.5 }, "trans2+=1.5");
+
+        // Keep Bottle 3 for a bit
+        tl.to({}, { duration: 1 });
+
+        // Transition 3: 1L -> ALKALINE
+        tl.to(texts[2], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans3")
+          .to(bottles[2], { rotationY: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans3")
+          .to(bottles[2], { opacity: 0, duration: 0.4 }, "trans3+=0.6")
+          .set(bottles[3], { rotationY: -180, scale: 0.85, opacity: 0 }, "trans3")
+          .to(bottles[3], { rotationY: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans3")
+          .to(bottles[3], { opacity: 1, duration: 0.4 }, "trans3+=1")
+          .to(texts[3], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans3+=1.5");
+          
+        if(progItems[2]) tl.to(progItems[2], { opacity: 0.3, duration: 0.5 }, "trans3");
+        if(progDots[2]) tl.to(progDots[2], { backgroundColor: 'transparent', duration: 0.5 }, "trans3");
+        if(progItems[3]) tl.to(progItems[3], { opacity: 1, duration: 0.5 }, "trans3+=1.5");
+        if(mProgs[2]) tl.to(mProgs[2], { opacity: 0, duration: 0.5 }, "trans3");
+        if(mProgs[3]) tl.to(mProgs[3], { opacity: 1, duration: 0.5 }, "trans3+=1.5");
+
+        // Keep Bottle 4 for a bit longer
+        tl.to({}, { duration: 1.5 });
+
+        // Final Outro Statement
+        tl.to(texts[3], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "outro")
+          .to(bottles[3], { scale: 0.9, opacity: 0.5, duration: 2, ease: "power2.out" }, "outro")
+          .to(outro, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "outro+=1");
+          
+        // Hold the final screen
+        tl.to({}, { duration: 1.5 });
     }
 }
 

@@ -215,15 +215,15 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         const outro = document.getElementById('col-outro');
 
         // Set initial states
-        gsap.set(bottles, { opacity: 0, scale: 0.9, rotationY: -180 });
+        gsap.set(bottles, { opacity: 0, scale: 0.9, rotation: -180 });
         gsap.set(texts, { opacity: 0, y: 30, filter: 'blur(5px)' });
         gsap.set(intro, { opacity: 1, y: 0, filter: 'blur(0px)' });
         gsap.set(outro, { opacity: 0, y: 30, filter: 'blur(5px)' });
 
         // 0-10% Intro fades out, Bottle 1 fades in
         tl.to(intro, { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "intro_out")
-          .set(bottles[0], { rotationY: -90, scale: 0.85, opacity: 0 }, "intro_out")
-          .to(bottles[0], { opacity: 1, scale: 1, rotationY: 0, duration: 1.5, ease: "power2.out" }, "intro_out+=0.5")
+          .set(bottles[0], { rotation: -90, scale: 0.85, opacity: 0 }, "intro_out")
+          .to(bottles[0], { opacity: 1, scale: 1, rotation: 0, duration: 1.5, ease: "power2.out" }, "intro_out+=0.5")
           .to(texts[0], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "intro_out+=1");
           
         if(progItems[0]) tl.to(progItems[0], { opacity: 1, duration: 0.5 }, "intro_out+=1");
@@ -235,11 +235,11 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         // Transition 1: 300ML -> 500ML
         tl.to(texts[0], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans1")
           // Outgoing bottle
-          .to(bottles[0], { rotationY: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans1")
+          .to(bottles[0], { rotation: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans1")
           .to(bottles[0], { opacity: 0, duration: 0.4 }, "trans1+=0.6")
           // Incoming bottle
-          .set(bottles[1], { rotationY: -180, scale: 0.85, opacity: 0 }, "trans1")
-          .to(bottles[1], { rotationY: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans1")
+          .set(bottles[1], { rotation: -180, scale: 0.85, opacity: 0 }, "trans1")
+          .to(bottles[1], { rotation: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans1")
           .to(bottles[1], { opacity: 1, duration: 0.4 }, "trans1+=1")
           
           .to(texts[1], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans1+=1.5");
@@ -256,10 +256,10 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
         // Transition 2: 500ML -> 1L
         tl.to(texts[1], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans2")
-          .to(bottles[1], { rotationY: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans2")
+          .to(bottles[1], { rotation: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans2")
           .to(bottles[1], { opacity: 0, duration: 0.4 }, "trans2+=0.6")
-          .set(bottles[2], { rotationY: -180, scale: 0.85, opacity: 0 }, "trans2")
-          .to(bottles[2], { rotationY: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans2")
+          .set(bottles[2], { rotation: -180, scale: 0.85, opacity: 0 }, "trans2")
+          .to(bottles[2], { rotation: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans2")
           .to(bottles[2], { opacity: 1, duration: 0.4 }, "trans2+=1")
           .to(texts[2], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans2+=1.5");
           
@@ -275,10 +275,10 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
         // Transition 3: 1L -> ALKALINE
         tl.to(texts[2], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans3")
-          .to(bottles[2], { rotationY: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans3")
+          .to(bottles[2], { rotation: 180, scale: 0.85, duration: 2, ease: "power1.inOut" }, "trans3")
           .to(bottles[2], { opacity: 0, duration: 0.4 }, "trans3+=0.6")
-          .set(bottles[3], { rotationY: -180, scale: 0.85, opacity: 0 }, "trans3")
-          .to(bottles[3], { rotationY: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans3")
+          .set(bottles[3], { rotation: -180, scale: 0.85, opacity: 0 }, "trans3")
+          .to(bottles[3], { rotation: 0, scale: 1, duration: 2, ease: "power1.inOut" }, "trans3")
           .to(bottles[3], { opacity: 1, duration: 0.4 }, "trans3+=1")
           .to(texts[3], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans3+=1.5");
           

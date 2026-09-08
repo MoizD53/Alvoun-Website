@@ -218,16 +218,29 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     }
 }
 
-// PREMIUM COLLECTION (GSAP ScrollTrigger)
+// 3D CAROUSEL (GSAP ScrollTrigger)
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
-    const collectionSection = document.querySelector('.collection-section');
-    if (collectionSection) {
-        // Timeline with pinning
+    const carouselSection = document.querySelector('.carousel-section');
+    if (carouselSection) {
+        const items = gsap.utils.toArray('.carousel-item');
+        const texts = gsap.utils.toArray('.c-text');
+        const numItems = items.length;
+        const angle = 360 / numItems;
+
+        // Initialize positions in 3D space
+        gsap.set(items, {
+            rotationY: (i) => i * angle,
+            transformOrigin: "50% 50% -400px" // Adjust based on CSS media queries if needed, but GSAP takes over here
+        });
+        
+        // Show first text
+        gsap.set(texts[0], { opacity: 1 });
+
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: '.collection-section',
+                trigger: '.carousel-section',
                 start: 'top top',
                 end: '+=400%', // 400% of viewport height creates a long scrolling experience
                 scrub: 1,
@@ -236,120 +249,35 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             }
         });
 
-        // Initialize elements
-        const bottles = [
-            document.getElementById('col-bottle-1'),
-            document.getElementById('col-bottle-2'),
-            document.getElementById('col-bottle-3'),
-            document.getElementById('col-bottle-4')
-        ];
+        // Create the rotation animation
+        // We rotate the entire stage, or just the items?
+        // Since we set transformOrigin, we can just rotate each item by -360 over the timeline
+        tl.to(items, {
+            rotationY: "-=360",
+            ease: "none",
+            duration: 1
+        }, 0);
+
+                // Synchronize text opacity
+        const step = 1 / numItems;
         
-        const texts = [
-            document.getElementById('col-text-1'),
-            document.getElementById('col-text-2'),
-            document.getElementById('col-text-3'),
-            document.getElementById('col-text-4')
-        ];
-        
-        const progItems = [
-            document.getElementById('prog-1'),
-            document.getElementById('prog-2'),
-            document.getElementById('prog-3'),
-            document.getElementById('prog-4')
-        ];
-        
-        const progDots = [
-            document.getElementById('pdot-1'),
-            document.getElementById('pdot-2'),
-            document.getElementById('pdot-3')
-        ];
-        
-        const mProgs = [
-            document.getElementById('mprog-1'),
-            document.getElementById('mprog-2'),
-            document.getElementById('mprog-3'),
-            document.getElementById('mprog-4')
-        ];
-
-        const intro = document.getElementById('col-intro');
-        const outro = document.getElementById('col-outro');
-
-        // Set initial states
-        gsap.set(bottles, { opacity: 0, scale: 1, z: 0, rotationY: 0, rotation: 0 });
-        gsap.set(texts, { opacity: 0, y: 30, filter: 'blur(5px)' });
-        gsap.set(intro, { opacity: 1, y: 0, filter: 'blur(0px)' });
-        gsap.set(outro, { opacity: 0, y: 30, filter: 'blur(5px)' });
-
-        // 0-10% Intro fades out, Bottle 1 fades in from distance
-        tl.to(intro, { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "intro_out")
-          .set(bottles[0], { z: -300, opacity: 0 }, "intro_out")
-          .to(bottles[0], { opacity: 1, z: 0, duration: 1.5, ease: "power2.out" }, "intro_out+=0.5")
-          .to(texts[0], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "intro_out+=1");
-          
-        if(progItems[0]) tl.to(progItems[0], { opacity: 1, duration: 0.5 }, "intro_out+=1");
-        if(progDots[0]) tl.to(progDots[0], { backgroundColor: '#fff', duration: 0.5 }, "intro_out+=1");
-
-        // Keep Bottle 1 stable for a bit
-        tl.to({}, { duration: 1 });
-
-        // Transition 1: 300ML -> 500ML
-        tl.to(texts[0], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans1")
-          .to(bottles[0], { rotationY: 90, scale: 0.95, opacity: 0, duration: 2, ease: "power2.inOut" }, "trans1")
-          .set(bottles[1], { rotationY: -90, scale: 0.95, opacity: 0 }, "trans1")
-          .to(bottles[1], { rotationY: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.inOut" }, "trans1+=1.5")
-          .to(texts[1], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans1+=3");
-          
-        if(progItems[0]) tl.to(progItems[0], { opacity: 0.3, duration: 0.5 }, "trans1");
-        if(progDots[0]) tl.to(progDots[0], { backgroundColor: 'transparent', duration: 0.5 }, "trans1");
-        if(progItems[1]) tl.to(progItems[1], { opacity: 1, duration: 0.5 }, "trans1+=3");
-        if(progDots[1]) tl.to(progDots[1], { backgroundColor: '#fff', duration: 0.5 }, "trans1+=3");
-        if(mProgs[0]) tl.to(mProgs[0], { opacity: 0, duration: 0.5 }, "trans1");
-        if(mProgs[1]) tl.to(mProgs[1], { opacity: 1, duration: 0.5 }, "trans1+=3");
-
-        // Keep Bottle 2 stable
-        tl.to({}, { duration: 1 });
-
-        // Transition 2: 500ML -> 1L
-        tl.to(texts[1], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans2")
-          .to(bottles[1], { rotationY: 90, scale: 0.95, opacity: 0, duration: 2, ease: "power2.inOut" }, "trans2")
-          .set(bottles[2], { rotationY: -90, scale: 0.95, opacity: 0 }, "trans2")
-          .to(bottles[2], { rotationY: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.inOut" }, "trans2+=1.5")
-          .to(texts[2], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans2+=3");
-          
-        if(progItems[1]) tl.to(progItems[1], { opacity: 0.3, duration: 0.5 }, "trans2");
-        if(progDots[1]) tl.to(progDots[1], { backgroundColor: 'transparent', duration: 0.5 }, "trans2");
-        if(progItems[2]) tl.to(progItems[2], { opacity: 1, duration: 0.5 }, "trans2+=3");
-        if(progDots[2]) tl.to(progDots[2], { backgroundColor: '#fff', duration: 0.5 }, "trans2+=3");
-        if(mProgs[1]) tl.to(mProgs[1], { opacity: 0, duration: 0.5 }, "trans2");
-        if(mProgs[2]) tl.to(mProgs[2], { opacity: 1, duration: 0.5 }, "trans2+=3");
-
-        // Keep Bottle 3 stable
-        tl.to({}, { duration: 1 });
-
-        // Transition 3: 1L -> ALKALINE
-        tl.to(texts[2], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans3")
-          .to(bottles[2], { rotationY: 90, scale: 0.95, opacity: 0, duration: 2, ease: "power2.inOut" }, "trans3")
-          .set(bottles[3], { rotationY: -90, scale: 0.95, opacity: 0 }, "trans3")
-          .to(bottles[3], { rotationY: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.inOut" }, "trans3+=1.5")
-          .to(texts[3], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans3+=3");
-          
-        if(progItems[2]) tl.to(progItems[2], { opacity: 0.3, duration: 0.5 }, "trans3");
-        if(progDots[2]) tl.to(progDots[2], { backgroundColor: 'transparent', duration: 0.5 }, "trans3");
-        if(progItems[3]) tl.to(progItems[3], { opacity: 1, duration: 0.5 }, "trans3+=3");
-        if(mProgs[2]) tl.to(mProgs[2], { opacity: 0, duration: 0.5 }, "trans3");
-        if(mProgs[3]) tl.to(mProgs[3], { opacity: 1, duration: 0.5 }, "trans3+=3");
-
-        // Keep Bottle 4 stable for a bit longer
-        tl.to({}, { duration: 1.5 });
-
-        // Final Outro Statement
-        tl.to(texts[3], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "outro")
-          .to(bottles[3], { z: -200, opacity: 0.5, duration: 2, ease: "power2.out" }, "outro")
-          .to(outro, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "outro+=1");
-          
-        // Hold the final screen
-        tl.to({}, { duration: 1.5 });
+        texts.forEach((text, i) => {
+            if (i !== 0) gsap.set(text, { opacity: 0 });
+            
+            // i=0: active 0 to 0.125, then fades out, active again at 0.875 to 1
+            // i=1: active 0.25
+            // i=2: active 0.5
+            // i=3: active 0.75
+            
+            let center = i * step;
+            
+            if (i === 0) {
+                tl.to(texts[0], { opacity: 0, duration: 0.05 }, step/2);
+                tl.to(texts[0], { opacity: 1, duration: 0.05 }, 1 - step/2);
+            } else {
+                tl.to(texts[i], { opacity: 1, duration: 0.05 }, center - step/2);
+                tl.to(texts[i], { opacity: 0, duration: 0.05 }, center + step/2);
+            }
+        });
     }
 }
-
-

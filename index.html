@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -292,91 +292,47 @@
             </div>
         </section>
 
-        <!-- 12 THE COLLECTION -->
-        <!-- 12 THE COLLECTION -->
-        <section id="cinematic-collection" class="collection-section">
-            <div class="collection-pinned-container">
-                <!-- Background -->
-                <div class="collection-bg"></div>
+                <!-- 12 THE COLLECTION -->
+        <section id="cinematic-collection" class="section carousel-section">
+            <div class="carousel-pinned-container">
+                <div class="carousel-bg"></div>
 
-                <div class="collection-content">
-                    <!-- Left: Progress Indicator -->
-                    <div class="collection-progress desktop-only">
-                        <div class="progress-item" id="prog-1">01</div>
-                        <div class="progress-dot" id="pdot-1"></div>
-                        <div class="progress-item" id="prog-2">02</div>
-                        <div class="progress-dot" id="pdot-2"></div>
-                        <div class="progress-item" id="prog-3">03</div>
-                        <div class="progress-dot" id="pdot-3"></div>
-                        <div class="progress-item" id="prog-4">04</div>
+                <div class="carousel-title-top">
+                    <p class="eyebrow">THE COLLECTION</p>
+                    <h2>PURENESS IN EVERY SIZE</h2>
+                </div>
+
+                <div class="carousel-stage">
+                    <div class="carousel-item" id="item-1">
+                        <img src="assets/300ml.png" alt="300ML Bottle">
                     </div>
-
-                    <!-- Mobile Progress Indicator -->
-                    <div class="collection-progress-mobile mobile-only">
-                        <div style="position:relative; width: 15px; height: 15px; display:inline-block;">
-                            <span class="prog-mob-num" id="mprog-1" style="position:absolute; top:0; left:0;">01</span>
-                            <span class="prog-mob-num" id="mprog-2" style="position:absolute; top:0; left:0; opacity:0;">02</span>
-                            <span class="prog-mob-num" id="mprog-3" style="position:absolute; top:0; left:0; opacity:0;">03</span>
-                            <span class="prog-mob-num" id="mprog-4" style="position:absolute; top:0; left:0; opacity:0;">04</span>
-                        </div>
-                        <span style="margin-left:5px;">/ 04</span>
+                    <div class="carousel-item" id="item-2">
+                        <img src="assets/500ml.png" alt="500ML Bottle">
                     </div>
-
-                    <!-- Center: Product Stage -->
-                    <div class="collection-stage">
-                        <img src="assets/300ml.png" alt="300ML Bottle" class="collection-bottle" id="col-bottle-1">
-                        <img src="assets/500ml.png" alt="500ML Bottle" class="collection-bottle" id="col-bottle-2">
-                        <img src="assets/1L.png" alt="1L Bottle" class="collection-bottle" id="col-bottle-3">
-                        <img src="assets/alkaline.png" alt="Alkaline Bottle" class="collection-bottle" id="col-bottle-4">
+                    <div class="carousel-item" id="item-3">
+                        <img src="assets/1L.png" alt="1L Bottle">
                     </div>
+                    <div class="carousel-item" id="item-4">
+                        <img src="assets/alkaline.png" alt="Alkaline Bottle">
+                    </div>
+                </div>
 
-                    <!-- Right: Text Information -->
-                    <div class="collection-text-area">
-                        <!-- Intro Text -->
-                        <div class="col-text-block" id="col-intro">
-                            <div class="col-subtitle">THE COLLECTION</div>
-                            <h2 class="col-title-large">PURENESS IN EVERY SIZE.</h2>
-                            <p class="col-desc">Same source. Same integrity. Different needs.</p>
-                        </div>
-
-                        <!-- Product 1 -->
-                        <div class="col-text-block" id="col-text-1">
-                            <div class="col-num-title desktop-only">01 / 04</div>
-                            <h2 class="col-title">300ML</h2>
-                            <h3 class="col-heading">PURE COMPANION.</h3>
-                            <p class="col-desc">Compact, considered, and made for everyday moments.</p>
-                        </div>
-
-                        <!-- Product 2 -->
-                        <div class="col-text-block" id="col-text-2">
-                            <div class="col-num-title desktop-only">02 / 04</div>
-                            <h2 class="col-title">500ML</h2>
-                            <h3 class="col-heading">MORE FOR MORE.</h3>
-                            <p class="col-desc">A balanced format for everyday hydration and active moments.</p>
-                        </div>
-
-                        <!-- Product 3 -->
-                        <div class="col-text-block" id="col-text-3">
-                            <div class="col-num-title desktop-only">03 / 04</div>
-                            <h2 class="col-title">1L</h2>
-                            <h3 class="col-heading">ROOM TO GO FURTHER.</h3>
-                            <p class="col-desc">A larger format for longer days and shared moments.</p>
-                        </div>
-
-                        <!-- Product 4 -->
-                        <div class="col-text-block" id="col-text-4">
-                            <div class="col-num-title desktop-only">04 / 04</div>
-                            <h2 class="col-title">ALKALINE</h2>
-                            <h3 class="col-heading">BALANCE, REFINED.</h3>
-                            <p class="col-desc">A considered balance of essential minerals for elevated daily hydration.</p>
-                        </div>
-
-                        <!-- Outro Text -->
-                        <div class="col-text-block" id="col-outro">
-                            <div class="col-subtitle">THE COLLECTION</div>
-                            <h2 class="col-title-large">FOUR FORMATS.<br>ONE STANDARD OF PURITY.</h2>
-                            <p class="col-desc-small">300ML &nbsp;|&nbsp; 500ML &nbsp;|&nbsp; 1L &nbsp;|&nbsp; ALKALINE</p>
-                        </div>
+                <div class="carousel-text-area">
+                    <div class="c-text" id="ctext-1">
+                        <h2 class="c-qty">300ML</h2>
+                        <p class="c-desc">Pure Companion</p>
+                    </div>
+                    <div class="c-text" id="ctext-2">
+                        <h2 class="c-qty">500ML</h2>
+                        <p class="c-desc">More for More</p>
+                    </div>
+                    <div class="c-text" id="ctext-3">
+                        <h2 class="c-qty">1L</h2>
+                        <p class="c-desc">Room to go Further</p>
+                    </div>
+                    <div class="c-text" id="ctext-4">
+                        <h2 class="c-qty">ALKALINE</h2>
+                        <p class="c-desc">Balance, Refined</p>
                     </div>
                 </div>
             </div>
@@ -557,6 +513,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

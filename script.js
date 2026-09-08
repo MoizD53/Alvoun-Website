@@ -384,3 +384,40 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     }
 }
 
+// PEOPLE CAMPAIGN PARALLAX
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const pcSection = document.querySelector('.people-section');
+    if (pcSection) {
+        gsap.to('.pc-image-1', { y: -50, ease: 'none', scrollTrigger: { trigger: '.people-campaign-grid', start: 'top bottom', end: 'bottom top', scrub: 1 } });
+        gsap.to('.pc-image-2', { y: 50, ease: 'none', scrollTrigger: { trigger: '.people-campaign-grid', start: 'top bottom', end: 'bottom top', scrub: 1 } });
+        gsap.to('.pc-image-3', { y: -80, ease: 'none', scrollTrigger: { trigger: '.people-campaign-grid', start: 'top bottom', end: 'bottom top', scrub: 1 } });
+    }
+
+    // REVIEWS SCROLL ANIMATION
+    const reviewsContainer = document.querySelector('.reviews-scroll-container');
+    if (reviewsContainer) {
+        const stories = gsap.utils.toArray('.review-story');
+        const numStories = stories.length;
+        
+        // Pin the area
+        ScrollTrigger.create({
+            trigger: reviewsContainer,
+            start: 'top top',
+            end: 'bottom bottom',
+            pin: '.reviews-pin-area'
+        });
+
+        // Animate each story
+        stories.forEach((story, i) => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: reviewsContainer,
+                    start: () => "top top-=" + (i * (100 / numStories)) + "%",
+                    end: () => "top top-=" + ((i + 1) * (100 / numStories)) + "%",
+                    scrub: true,
+                    toggleClass: { targets: story, className: 'active' }
+                }
+            });
+        });
+    }
+}

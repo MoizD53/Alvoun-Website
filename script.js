@@ -158,6 +158,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// HERO SECTION 3D SCROLL EFFECT (GSAP ScrollTrigger)
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+        const heroTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: heroSection,
+                start: 'top top',
+                end: '+=300%', // 3 steps, 300% scroll
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1
+            }
+        });
+
+        const heroBottle = document.getElementById('hero-bottle');
+        const heroTexts = [
+            document.getElementById('hero-text-0'),
+            document.getElementById('hero-text-1'),
+            document.getElementById('hero-text-2'),
+            document.getElementById('hero-text-3')
+        ];
+
+        // Ensure bottle is visible
+        gsap.set(heroBottle, { opacity: 1, scale: 1, rotationY: 0, z: 0 });
+
+        // Step 1: ALVOUN -> H2O
+        heroTl.to(heroTexts[0], { opacity: 0, y: -30, duration: 1 }, "step1")
+              .to(heroBottle, { scale: 1.5, rotationY: 15, z: 300, duration: 2 }, "step1")
+              .to(heroTexts[1], { opacity: 1, y: 0, duration: 1 }, "step1+=1");
+
+        // Hold
+        heroTl.to({}, { duration: 1 });
+
+        // Step 2: H2O -> EARTH
+        heroTl.to(heroTexts[1], { opacity: 0, y: -30, duration: 1 }, "step2")
+              .to(heroBottle, { scale: 1.8, rotationY: -15, z: 500, duration: 2 }, "step2")
+              .to(heroTexts[2], { opacity: 1, y: 0, duration: 1 }, "step2+=1");
+
+        // Hold
+        heroTl.to({}, { duration: 1 });
+
+        // Step 3: EARTH -> PH LEVEL
+        heroTl.to(heroTexts[2], { opacity: 0, y: -30, duration: 1 }, "step3")
+              .to(heroBottle, { scale: 1.2, rotationY: 0, z: 100, duration: 2 }, "step3")
+              .to(heroTexts[3], { opacity: 1, y: 0, duration: 1 }, "step3+=1");
+
+        // Hold final state
+        heroTl.to({}, { duration: 1.5 });
+    }
+}
+
 // PREMIUM COLLECTION (GSAP ScrollTrigger)
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);

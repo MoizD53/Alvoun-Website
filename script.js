@@ -183,18 +183,18 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             document.getElementById('hero-text-3')
         ];
 
-        // Intro animation on page load (bottom to top, very big)
-        gsap.set(heroBottle, { y: '100vh', scale: 2.5, opacity: 0 });
+        // Intro animation on page load (bottom to top, very big but fully visible)
+        gsap.set(heroBottle, { y: '100vh', scale: 1, opacity: 0 });
         gsap.set(heroTexts[0], { opacity: 0, y: 30 });
         
         // When page loads, animate the bottle up and text in
-        gsap.to(heroBottle, { y: 0, scale: 2.5, opacity: 1, duration: 1.5, ease: "power3.out", delay: 0.2 });
+        gsap.to(heroBottle, { y: 0, scale: 1, opacity: 1, duration: 1.5, ease: "power3.out", delay: 0.2 });
         gsap.to(heroTexts[0], { opacity: 1, y: 0, duration: 1, delay: 1 });
 
         // Scroll Timeline
         // Step 1: ALVOUN -> H2O (Bottle shrinks and spins 360)
         heroTl.to(heroTexts[0], { opacity: 0, y: -30, duration: 1 }, "step1")
-              .to(heroBottle, { scale: 0.9, rotation: 360, y: 0, duration: 2, ease: "power1.inOut" }, "step1")
+              .to(heroBottle, { scale: 0.6, rotation: 360, y: 0, duration: 2, ease: "power1.inOut" }, "step1")
               .to(heroTexts[1], { opacity: 1, x: 0, duration: 1 }, "step1+=1");
 
         // Hold
@@ -202,7 +202,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
         // Step 2: H2O -> EARTH (Bottle spins another 360)
         heroTl.to(heroTexts[1], { opacity: 0, x: -30, duration: 1 }, "step2")
-              .to(heroBottle, { scale: 0.85, rotation: 720, duration: 2, ease: "power1.inOut" }, "step2")
+              .to(heroBottle, { scale: 0.6, rotation: 720, duration: 2, ease: "power1.inOut" }, "step2")
               .to(heroTexts[2], { opacity: 1, x: 0, duration: 1 }, "step2+=1");
 
         // Hold
@@ -210,7 +210,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
         // Step 3: EARTH -> PH LEVEL (Bottle spins another 360)
         heroTl.to(heroTexts[2], { opacity: 0, x: 30, duration: 1 }, "step3")
-              .to(heroBottle, { scale: 0.9, rotation: 1080, duration: 2, ease: "power1.inOut" }, "step3")
+              .to(heroBottle, { scale: 0.6, rotation: 1080, duration: 2, ease: "power1.inOut" }, "step3")
               .to(heroTexts[3], { opacity: 1, x: 0, duration: 1 }, "step3+=1");
 
         // Hold final state

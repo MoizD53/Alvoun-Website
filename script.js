@@ -218,6 +218,38 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     }
 }
 
+// JOURNEY VISUAL ANIMATION
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const journeySection = document.querySelector('.journey-visual-section');
+    if (journeySection) {
+        const jBg = journeySection.querySelector('.journey-bg');
+        const jBottle = journeySection.querySelector('.journey-bottle');
+        const jText = journeySection.querySelector('.journey-text');
+
+        gsap.set(jBg, { scale: 1.1 });
+        gsap.set(jBottle, { opacity: 0, y: 50, scale: 0.95 });
+        gsap.set(jText, { opacity: 0, x: -30 });
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: journeySection,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1
+            }
+        })
+        .to(jBg, { scale: 1, ease: "none" }, 0);
+
+        ScrollTrigger.create({
+            trigger: journeySection,
+            start: 'top 50%',
+            animation: gsap.timeline()
+                .to(jBottle, { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "power3.out" })
+                .to(jText, { opacity: 1, x: 0, duration: 1, ease: "power3.out" }, "-=1")
+        });
+    }
+}
+
 // PREMIUM COLLECTION (GSAP ScrollTrigger)
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);

@@ -1,4 +1,4 @@
-﻿/* RESET & BASE */
+/* RESET & BASE */
 :root {
     --bg-light: #05080b;
     --bg-dark: #000000;
@@ -192,6 +192,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     perspective: 1500px;
+    z-index: 2;
 }
 
 .hero-bottle {
@@ -1364,3 +1365,24 @@ a:hover {
  . j o u r n e y - t e x t   p   {   m a r g i n :   0 ;   f o n t - s i z e :   1 r e m ;   o p a c i t y :   0 . 8 ;   t e x t - t r a n s f o r m :   u p p e r c a s e ;   }  
  . j o u r n e y - t e x t   p . s m a l l   {   f o n t - s i z e :   0 . 7 r e m ;   m a r g i n - t o p :   5 p x ;   o p a c i t y :   0 . 5 ;   }  
  
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.6; /* Slight dim to make bottle stand out */
+}
+.scroll-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.scroll-indicator { z-index: 10; }

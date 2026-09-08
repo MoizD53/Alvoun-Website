@@ -183,29 +183,35 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             document.getElementById('hero-text-3')
         ];
 
-        // Ensure bottle is visible
-        gsap.set(heroBottle, { opacity: 1, scale: 1, rotationY: 0, z: 0 });
+        // Intro animation on page load (bottom to top, very big)
+        gsap.set(heroBottle, { y: '100vh', scale: 2.5, opacity: 0 });
+        gsap.set(heroTexts[0], { opacity: 0, y: 30 });
+        
+        // When page loads, animate the bottle up and text in
+        gsap.to(heroBottle, { y: 0, scale: 2.5, opacity: 1, duration: 1.5, ease: "power3.out", delay: 0.2 });
+        gsap.to(heroTexts[0], { opacity: 1, y: 0, duration: 1, delay: 1 });
 
-        // Step 1: ALVOUN -> H2O
+        // Scroll Timeline
+        // Step 1: ALVOUN -> H2O (Bottle shrinks, text comes from left)
         heroTl.to(heroTexts[0], { opacity: 0, y: -30, duration: 1 }, "step1")
-              .to(heroBottle, { scale: 1.5, rotationY: 15, z: 300, duration: 2 }, "step1")
-              .to(heroTexts[1], { opacity: 1, y: 0, duration: 1 }, "step1+=1");
+              .to(heroBottle, { scale: 0.9, rotationY: -15, y: 0, duration: 2, ease: "power1.inOut" }, "step1")
+              .to(heroTexts[1], { opacity: 1, x: 0, duration: 1 }, "step1+=1");
 
         // Hold
         heroTl.to({}, { duration: 1 });
 
-        // Step 2: H2O -> EARTH
-        heroTl.to(heroTexts[1], { opacity: 0, y: -30, duration: 1 }, "step2")
-              .to(heroBottle, { scale: 1.8, rotationY: -15, z: 500, duration: 2 }, "step2")
-              .to(heroTexts[2], { opacity: 1, y: 0, duration: 1 }, "step2+=1");
+        // Step 2: H2O -> EARTH (Bottle rotates slightly, text comes from right)
+        heroTl.to(heroTexts[1], { opacity: 0, x: -30, duration: 1 }, "step2")
+              .to(heroBottle, { scale: 0.85, rotationY: 15, duration: 2, ease: "power1.inOut" }, "step2")
+              .to(heroTexts[2], { opacity: 1, x: 0, duration: 1 }, "step2+=1");
 
         // Hold
         heroTl.to({}, { duration: 1 });
 
-        // Step 3: EARTH -> PH LEVEL
-        heroTl.to(heroTexts[2], { opacity: 0, y: -30, duration: 1 }, "step3")
-              .to(heroBottle, { scale: 1.2, rotationY: 0, z: 100, duration: 2 }, "step3")
-              .to(heroTexts[3], { opacity: 1, y: 0, duration: 1 }, "step3+=1");
+        // Step 3: EARTH -> PH LEVEL (Bottle rotates back, text comes from left)
+        heroTl.to(heroTexts[2], { opacity: 0, x: 30, duration: 1 }, "step3")
+              .to(heroBottle, { scale: 0.9, rotationY: -10, duration: 2, ease: "power1.inOut" }, "step3")
+              .to(heroTexts[3], { opacity: 1, x: 0, duration: 1 }, "step3+=1");
 
         // Hold final state
         heroTl.to({}, { duration: 1.5 });

@@ -1,4 +1,4 @@
-﻿/* RESET & BASE */
+/* RESET & BASE */
 :root {
     --bg-light: #05080b;
     --bg-dark: #000000;
@@ -175,7 +175,7 @@ a:hover {
 .hero-section {
     padding: 0;
     height: 100vh;
-    background: url('assets/hero_bg_3d.jpg') center/cover no-repeat;
+    background: radial-gradient(circle at 50% 50%, #0c1622 0%, #05080A 100%);
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -196,13 +196,13 @@ a:hover {
 
 .hero-bottle {
     position: absolute;
-    height: 85vh;
+    height: 95vh;
     width: auto;
     object-fit: contain;
     z-index: 2;
     transform-origin: center center;
     will-change: transform, opacity;
-    filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.8));
 }
 
 .hero-text-layer {

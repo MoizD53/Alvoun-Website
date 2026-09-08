@@ -218,6 +218,7 @@ a:hover {
     transform: translateY(0);
     text-align: center;
     width: 100%;
+    z-index: 1; /* Behind the bottle */
 }
 
 #hero-text-1 {
@@ -242,6 +243,23 @@ a:hover {
     transform: translateY(-50%) translateX(-30px);
     text-align: left;
     max-width: 400px;
+}
+
+.hero-title-3d {
+    font-size: 18vw;
+    letter-spacing: 0.15em;
+    margin: 0;
+    line-height: 1;
+    color: #082f49;
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    /* Elegant 3D effect */
+    text-shadow: 
+        1px 1px 0px #0284c7,
+        2px 2px 0px #0284c7,
+        3px 3px 0px #0284c7,
+        4px 4px 0px #0284c7,
+        5px 5px 15px rgba(8, 47, 73, 0.4);
 }
 
 .hero-title {

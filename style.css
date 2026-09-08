@@ -1,4 +1,4 @@
-/* RESET & BASE */
+﻿/* RESET & BASE */
 :root {
     --bg-light: #05080b;
     --bg-dark: #000000;
@@ -1394,3 +1394,4 @@ a:hover {
     .review-quote { font-size: 1.8rem; }
     .review-right { align-items: center; }
 }
+

@@ -976,14 +976,12 @@ a:hover {
     margin-bottom: 2rem;
 }
 
-.footer-logo-img {
-    max-width: 140px;
+.footer-logo-img { max-width: 200px;
     height: auto;
     filter: brightness(0) invert(1);
 }
 
-.footer-address {
-    font-size: 0.85rem;
+.footer-address { font-size: 1.1rem;
     color: #9ca3af;
     line-height: 1.6;
     margin-bottom: 3rem;
@@ -1019,13 +1017,11 @@ a:hover {
     gap: 0.5rem;
 }
 
-.footer-label {
-    font-size: 0.85rem;
+.footer-label { font-size: 1.1rem;
     color: #9ca3af;
 }
 
-.footer-contact-item a {
-    font-size: 0.85rem;
+.footer-contact-item a { font-size: 1.1rem;
     color: #e5e7eb;
     text-decoration: none;
     transition: color 0.2s ease;
@@ -1046,8 +1042,7 @@ a:hover {
     flex-direction: column;
 }
 
-.footer-col-title {
-    font-size: 0.85rem;
+.footer-col-title { font-size: 1.1rem;
     font-weight: 400;
     color: #9ca3af;
     margin-bottom: 1.5rem;
@@ -1062,8 +1057,7 @@ a:hover {
     gap: 1rem;
 }
 
-.footer-column a {
-    font-size: 0.85rem;
+.footer-column a { font-size: 1.1rem;
     color: #e5e7eb;
     text-decoration: none;
     transition: color 0.2s ease;
@@ -1445,3 +1439,5 @@ a:hover {
         width: 10vw;
     }
 }
+
+

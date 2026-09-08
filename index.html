@@ -338,94 +338,20 @@
             </div>
         </section>
 
-        <!-- 13 FROM DAHOD, OUTWARD -->
-        <!-- 13 FROM DAHOD, OUTWARD (Cinematic Distribution Art) -->
-        <section id="distribution" class="art-dist-scroll">
-            <div class="art-dist-sticky" id="art-dist-container">
-                <!-- Atmospheric Background -->
-                <div class="art-dist-bg"></div>
-                <div class="art-dist-noise"></div>
+                <!-- 13 FROM DAHOD, OUTWARD -->
+        <section id="distribution" class="section bg-dark text-light" style="padding: 6rem 0;">
+            <div class="container d-flex flex-column align-items-center justify-content-center text-center">
                 
-                <!-- SVG Network Layer -->
-                <div class="art-dist-network" id="art-network-layer">
-                    <!-- Desktop SVG -->
-                    <svg viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice" class="art-dist-svg desktop-only">
-                        <defs>
-                            <filter id="glow-node" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="4" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                            <filter id="glow-ambient" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="20" result="blur" />
-                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                            </filter>
-                            <linearGradient id="grad-rj" x1="50%" y1="100%" x2="20%" y2="0%">
-                                <stop offset="0%" stop-color="#0f2b5b" stop-opacity="0.8" />
-                                <stop offset="100%" stop-color="#a3b836" stop-opacity="0.3" />
-                            </linearGradient>
-                            <linearGradient id="grad-mp" x1="0%" y1="100%" x2="100%" y2="20%">
-                                <stop offset="0%" stop-color="#0f2b5b" stop-opacity="0.8" />
-                                <stop offset="100%" stop-color="#4a90e2" stop-opacity="0.3" />
-                            </linearGradient>
-                            <linearGradient id="grad-gj" x1="50%" y1="0%" x2="50%" y2="100%">
-                                <stop offset="0%" stop-color="#0f2b5b" stop-opacity="0.8" />
-                                <stop offset="100%" stop-color="#a3b836" stop-opacity="0.3" />
-                            </linearGradient>
-                        </defs>
-
-                        <path id="path-rj" class="art-path" d="M 500 450 C 450 300, 350 200, 300 150" fill="none" stroke="url(#grad-rj)" stroke-width="1.5" />
-                        <path id="path-mp" class="art-path" d="M 500 450 C 650 430, 750 480, 850 550" fill="none" stroke="url(#grad-mp)" stroke-width="1.5" />
-                        <path id="path-gj" class="art-path" d="M 500 450 C 450 550, 350 650, 200 700" fill="none" stroke="url(#grad-gj)" stroke-width="1.5" />
-
-                        <path id="hl-rj" class="art-highlight" d="M 500 450 C 450 300, 350 200, 300 150" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
-                        <path id="hl-mp" class="art-highlight" d="M 500 450 C 650 430, 750 480, 850 550" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
-                        <path id="hl-gj" class="art-highlight" d="M 500 450 C 450 550, 350 650, 200 700" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
-
-                        <g class="art-dist-nodes" fill="#fff" opacity="0.3">
-                            <circle cx="430" cy="275" r="1.5" />
-                            <circle cx="360" cy="195" r="1.5" />
-                            <circle cx="300" cy="150" r="3" fill="#a3b836" filter="url(#glow-node)" />
-                            <circle cx="650" cy="455" r="1.5" />
-                            <circle cx="750" cy="495" r="1.5" />
-                            <circle cx="850" cy="550" r="3" fill="#4a90e2" filter="url(#glow-node)" />
-                            <circle cx="420" cy="580" r="1.5" />
-                            <circle cx="320" cy="650" r="1.5" />
-                            <circle cx="200" cy="700" r="3" fill="#a3b836" filter="url(#glow-node)" />
-                        </g>
-
-                        <circle class="art-origin-ambient" cx="500" cy="450" r="40" fill="rgba(163, 184, 54, 0.1)" filter="url(#glow-ambient)" />
-                        <circle class="art-origin-pulse" cx="500" cy="450" r="8" fill="rgba(255, 255, 255, 0.2)" />
-                        <circle class="art-origin-dot" cx="500" cy="450" r="3" fill="#fff" filter="url(#glow-node)" />
-                    </svg>
-                    
-                    <!-- Mobile SVG -->
-                    <svg viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" class="art-dist-svg mobile-only">
-                        <path class="art-path" d="M 200 220 Q 250 300 200 360" fill="none" stroke="url(#grad-gj)" stroke-width="1.5" />
-                        <path class="art-path" d="M 200 360 Q 150 440 200 480" fill="none" stroke="url(#grad-mp)" stroke-width="1.5" />
-                        <path class="art-path" d="M 200 480 Q 250 560 200 600" fill="none" stroke="url(#grad-rj)" stroke-width="1.5" />
-                        
-                        <path class="art-highlight" d="M 200 220 Q 250 300 200 360" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
-                        <path class="art-highlight" d="M 200 360 Q 150 440 200 480" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
-                        <path class="art-highlight" d="M 200 480 Q 250 560 200 600" fill="none" stroke="#fff" stroke-width="2" opacity="0.4" />
-                        
-                        <g class="art-dist-nodes" fill="#fff" opacity="0.3">
-                            <circle cx="200" cy="360" r="3" fill="#a3b836" filter="url(#glow-node)" />
-                            <circle cx="200" cy="480" r="3" fill="#4a90e2" filter="url(#glow-node)" />
-                            <circle cx="200" cy="600" r="3" fill="#a3b836" filter="url(#glow-node)" />
-                        </g>
-                        
-                        <circle class="art-origin-dot" cx="200" cy="220" r="3" fill="#fff" filter="url(#glow-node)" />
-                        <circle class="art-origin-ambient" cx="200" cy="220" r="40" fill="rgba(163, 184, 54, 0.1)" filter="url(#glow-ambient)" />
-                    </svg>
+                <div class="art-text-layer" style="position: relative; opacity: 1; transform: none; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; pointer-events: auto;">
+                    <div class="art-stat-number final" style="font-family: 'Inter', sans-serif; font-weight: 300; font-size: 4rem; letter-spacing: -0.02em; color: #fff;">100+</div>
+                    <div class="art-label-xl" style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.5rem; letter-spacing: 0.2em; color: #a1b0c0; margin-top: 0.5rem;">DISTRIBUTORS</div>
+                    <div class="art-label-md" style="font-family: 'Inter', sans-serif; font-size: 1rem; letter-spacing: 0.2em; color: #64748b; margin-top: 0.5rem; margin-bottom: 4rem;">ACROSS THREE STATES</div>
+                    <div class="art-serif-title small mt-3" style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #e2e8f0;">FROM DAHOD, OUTWARD.</div>
+                    <div class="art-editorial-italic mt-1" style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #94a3b8; font-style: italic;">"What begins here, flows outward."</div>
                 </div>
 
-                <!-- Text Layers -->
-                <div class="art-text-layer" id="art-final-text">
-                    <div class="art-stat-number final">100+</div>
-                    <div class="art-label-xl">DISTRIBUTORS</div>
-                    <div class="art-label-md">ACROSS THREE STATES</div>
-                    <div class="art-serif-title small mt-3">FROM DAHOD, OUTWARD.</div>
-                    <div class="art-editorial-italic mt-1">"What begins here, flows outward."</div>
+                <div class="distribution-map-container mt-5" style="width: 100%; max-width: 800px; margin: 0 auto;">
+                    <img src="assets/india-highlighted.svg" alt="India Map with Gujarat, Rajasthan, MP highlighted" style="width: 100%; height: auto; filter: drop-shadow(0 0 20px rgba(14, 165, 233, 0.2));">
                 </div>
             </div>
         </section>
@@ -623,6 +549,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

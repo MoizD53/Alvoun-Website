@@ -1,4 +1,4 @@
-/* RESET & BASE */
+﻿/* RESET & BASE */
 :root {
     --bg-light: #05080b;
     --bg-dark: #000000;
@@ -435,7 +435,7 @@ a:hover {
     height: 10px;
     background: linear-gradient(to right, #ff3333, #ff9933, #ffff33, #33cc33, #3399ff, #3333ff, #9933ff);
     border-radius: 5px;
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
 }
 
 .spectrum-labels {
@@ -596,7 +596,7 @@ a:hover {
 .ph-marker {
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -5px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1147,149 +1147,10 @@ a:hover {
 }
 
 
-.ph-marker { transform: translateY(-5px); }
-
-
-/* ========================================================
-   CINEMATIC DISTRIBUTION ART SECTION (DUOKARMA INSPIRED)
-   ======================================================== */
-.art-dist-scroll {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    background-color: #05080B;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-.art-dist-sticky {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    perspective: 1000px;
-}
-
-.art-dist-bg {
+.ph-marker {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, #0A1820 0%, #05080B 70%);
-    z-index: 0;
-}
-
-.art-dist-noise {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.art-dist-network {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    transform-style: preserve-3d;
-}
-
-.art-dist-svg {
-    width: 100%;
-    max-width: 1400px;
-    height: 100%;
-    max-height: 900px;
-    overflow: visible;
-}
-
-.art-text-layer {
-    position: absolute;
-    z-index: 3;
-    text-align: center;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.art-serif-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    letter-spacing: 0.2em;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: #F5F7F6;
-}
-.art-serif-title.small {
-    font-size: 1.5rem;
-    opacity: 0.8;
-}
-
-.art-label-main {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.3em;
-    color: #D9E0DF;
-    text-shadow: 0 0 10px rgba(255,255,255,0.2);
-}
-.art-label-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: #899497;
-    margin-top: 4px;
-}
-.art-label-xl {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.4em;
-    color: #F5F7F6;
-    margin-top: 1rem;
-}
-.art-label-md {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.3em;
-    color: #899497;
-    margin-top: 0.5rem;
-}
-
-.art-stat-number {
-    font-family: 'Inter', sans-serif;
-    font-size: 12rem;
-    font-weight: 200;
-    line-height: 1;
-    color: #F5F7F6;
-    text-shadow: 0 0 40px rgba(255,255,255,0.1);
-    letter-spacing: -0.02em;
-}
-.art-stat-number.final {
-    font-size: 8rem;
-}
-
-.art-editorial-italic {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #899497;
-}
-
-/* Positioning */
-#art-title-initial { top: 15%; width: 100%; }
-#art-label-dahod { top: 52%; left: 50%; transform: translate(-50%, 0); margin-left: 30px; text-align: left; }
-#art-label-rj { top: 100%; left: 50%; transform: translate(-50%, 10px); }
-#art-label-mp { top: 50%; left: 100%; transform: translate(10px, -50%); text-align: left; }
-#art-label-gj { top: 100%; left: 50%; transform: translate(-50%, 10px); }
-
-#art-hero-stat { top: 50%; left: 30%; transform: translate(-50%, -50%); mix-blend-mode: screen; }
+    top: 50%;
+    transform: translate(-50%, -5px); mix-blend-mode: screen; }
 #art-final-text { top: 50%; width: 100%; transform: translateY(-50%); }
 
 /* Hover Regions mapped to SVG coordinates */
@@ -1396,9 +1257,9 @@ a:hover {
 .carousel-title-top .eyebrow { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: #a1b0c0; text-transform: uppercase; margin-bottom: 1rem; }
 .carousel-title-top h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #fff; text-transform: uppercase; font-weight: 300; }
 
-.carousel-stage { position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); width: 100vw; height: 50vh; z-index: 2; perspective: 1500px; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; }
+.carousel-stage { position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); width: 100vw; height: 75vh; z-index: 2; perspective: 1500px; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; }
 .carousel-item { position: absolute; width: 300px; height: 100%; display: flex; justify-content: center; align-items: center; transform-origin: 50% 50% -400px; }
-.carousel-item img { max-height: 100%; width: auto; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); }
+.carousel-item img { max-height: 120%; width: auto; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); }
 
 .carousel-text-area { position: absolute; bottom: 8%; width: 100%; text-align: center; z-index: 3; color: #333; }
 .c-text { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; opacity: 0; }
@@ -1410,4 +1271,5 @@ a:hover {
     .carousel-title-top h2 { font-size: 2rem; }
     .c-text h2.c-qty { font-size: 3rem; }
 }
+
 

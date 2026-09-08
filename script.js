@@ -294,57 +294,50 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
         // Transition 1: 300ML -> 500ML
         tl.to(texts[0], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans1")
-          // Pop Out (comes out like a 3d object)
-          .to(bottles[0], { scale: 1.8, rotationY: 25, duration: 1.5, ease: "power1.inOut" }, "trans1")
-          // Go Back In & Fade out
-          .to(bottles[0], { scale: 1, rotationY: 0, opacity: 0, duration: 1.5, ease: "power1.inOut" }, "trans1+=1.5")
-          // Incoming Bottle starts popped out, goes in while fading in
-          .set(bottles[1], { scale: 1.8, rotationY: 25, opacity: 0 }, "trans1+=1.5")
-          .to(bottles[1], { scale: 1, rotationY: 0, opacity: 1, duration: 1.5, ease: "power1.inOut" }, "trans1+=1.5")
-          // New text
-          .to(texts[1], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans1+=2.5");
+          .to(bottles[0], { rotationY: 90, scale: 0.95, opacity: 0, duration: 2, ease: "power2.inOut" }, "trans1")
+          .set(bottles[1], { rotationY: -90, scale: 0.95, opacity: 0 }, "trans1")
+          .to(bottles[1], { rotationY: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.inOut" }, "trans1+=1.5")
+          .to(texts[1], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans1+=3");
           
         if(progItems[0]) tl.to(progItems[0], { opacity: 0.3, duration: 0.5 }, "trans1");
         if(progDots[0]) tl.to(progDots[0], { backgroundColor: 'transparent', duration: 0.5 }, "trans1");
-        if(progItems[1]) tl.to(progItems[1], { opacity: 1, duration: 0.5 }, "trans1+=2.5");
-        if(progDots[1]) tl.to(progDots[1], { backgroundColor: '#fff', duration: 0.5 }, "trans1+=2.5");
+        if(progItems[1]) tl.to(progItems[1], { opacity: 1, duration: 0.5 }, "trans1+=3");
+        if(progDots[1]) tl.to(progDots[1], { backgroundColor: '#fff', duration: 0.5 }, "trans1+=3");
         if(mProgs[0]) tl.to(mProgs[0], { opacity: 0, duration: 0.5 }, "trans1");
-        if(mProgs[1]) tl.to(mProgs[1], { opacity: 1, duration: 0.5 }, "trans1+=2.5");
+        if(mProgs[1]) tl.to(mProgs[1], { opacity: 1, duration: 0.5 }, "trans1+=3");
 
         // Keep Bottle 2 stable
         tl.to({}, { duration: 1 });
 
         // Transition 2: 500ML -> 1L
         tl.to(texts[1], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans2")
-          .to(bottles[1], { scale: 1.8, rotationY: 25, duration: 1.5, ease: "power1.inOut" }, "trans2")
-          .to(bottles[1], { scale: 1, rotationY: 0, opacity: 0, duration: 1.5, ease: "power1.inOut" }, "trans2+=1.5")
-          .set(bottles[2], { scale: 1.8, rotationY: 25, opacity: 0 }, "trans2+=1.5")
-          .to(bottles[2], { scale: 1, rotationY: 0, opacity: 1, duration: 1.5, ease: "power1.inOut" }, "trans2+=1.5")
-          .to(texts[2], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans2+=2.5");
+          .to(bottles[1], { rotationY: 90, scale: 0.95, opacity: 0, duration: 2, ease: "power2.inOut" }, "trans2")
+          .set(bottles[2], { rotationY: -90, scale: 0.95, opacity: 0 }, "trans2")
+          .to(bottles[2], { rotationY: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.inOut" }, "trans2+=1.5")
+          .to(texts[2], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans2+=3");
           
         if(progItems[1]) tl.to(progItems[1], { opacity: 0.3, duration: 0.5 }, "trans2");
         if(progDots[1]) tl.to(progDots[1], { backgroundColor: 'transparent', duration: 0.5 }, "trans2");
-        if(progItems[2]) tl.to(progItems[2], { opacity: 1, duration: 0.5 }, "trans2+=2.5");
-        if(progDots[2]) tl.to(progDots[2], { backgroundColor: '#fff', duration: 0.5 }, "trans2+=2.5");
+        if(progItems[2]) tl.to(progItems[2], { opacity: 1, duration: 0.5 }, "trans2+=3");
+        if(progDots[2]) tl.to(progDots[2], { backgroundColor: '#fff', duration: 0.5 }, "trans2+=3");
         if(mProgs[1]) tl.to(mProgs[1], { opacity: 0, duration: 0.5 }, "trans2");
-        if(mProgs[2]) tl.to(mProgs[2], { opacity: 1, duration: 0.5 }, "trans2+=2.5");
+        if(mProgs[2]) tl.to(mProgs[2], { opacity: 1, duration: 0.5 }, "trans2+=3");
 
         // Keep Bottle 3 stable
         tl.to({}, { duration: 1 });
 
         // Transition 3: 1L -> ALKALINE
         tl.to(texts[2], { opacity: 0, y: -30, filter: 'blur(5px)', duration: 1 }, "trans3")
-          .to(bottles[2], { scale: 1.8, rotationY: 25, duration: 1.5, ease: "power1.inOut" }, "trans3")
-          .to(bottles[2], { scale: 1, rotationY: 0, opacity: 0, duration: 1.5, ease: "power1.inOut" }, "trans3+=1.5")
-          .set(bottles[3], { scale: 1.8, rotationY: 25, opacity: 0 }, "trans3+=1.5")
-          .to(bottles[3], { scale: 1, rotationY: 0, opacity: 1, duration: 1.5, ease: "power1.inOut" }, "trans3+=1.5")
-          .to(texts[3], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans3+=2.5");
+          .to(bottles[2], { rotationY: 90, scale: 0.95, opacity: 0, duration: 2, ease: "power2.inOut" }, "trans3")
+          .set(bottles[3], { rotationY: -90, scale: 0.95, opacity: 0 }, "trans3")
+          .to(bottles[3], { rotationY: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.inOut" }, "trans3+=1.5")
+          .to(texts[3], { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1 }, "trans3+=3");
           
         if(progItems[2]) tl.to(progItems[2], { opacity: 0.3, duration: 0.5 }, "trans3");
         if(progDots[2]) tl.to(progDots[2], { backgroundColor: 'transparent', duration: 0.5 }, "trans3");
-        if(progItems[3]) tl.to(progItems[3], { opacity: 1, duration: 0.5 }, "trans3+=2.5");
+        if(progItems[3]) tl.to(progItems[3], { opacity: 1, duration: 0.5 }, "trans3+=3");
         if(mProgs[2]) tl.to(mProgs[2], { opacity: 0, duration: 0.5 }, "trans3");
-        if(mProgs[3]) tl.to(mProgs[3], { opacity: 1, duration: 0.5 }, "trans3+=2.5");
+        if(mProgs[3]) tl.to(mProgs[3], { opacity: 1, duration: 0.5 }, "trans3+=3");
 
         // Keep Bottle 4 stable for a bit longer
         tl.to({}, { duration: 1.5 });
